@@ -1,0 +1,23 @@
+<table border='2' class='table'>
+  <tr>
+    <th> Stock name</th>
+    <th> Current Price</th>
+    <th> Quantity</th>
+    <th> Total Buy Price</th>  
+    <th> Holding Value</th>  
+    <th> Profit</th>  
+    <th> SELL </th>
+
+  </tr>
+  <tr *ngFor="let li of list">
+    <td>{{li.sName}}</td>
+    <td>{{li.currentPrice | currency}}</td>
+    <td>{{li.quantity}}</td>
+    <td>{{li.totalBuyPrice | currency}}</td>
+    <td>{{li.holdingValue | currency}}</td>
+    <td>{{li.profit | currency }}</td>
+    <td><button class="myButton" (click)="sellStock(li)" type="submit" >SELL</button></td>
+  
+  </tr> 
+</table>
+

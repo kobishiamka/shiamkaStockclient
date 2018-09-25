@@ -1,0 +1,21 @@
+<table border='2' class='table'>
+  <tr>
+    <th> Action</th>
+    <th> Stock name</th>
+    <th> AVG price</th>
+    <th> Quantity</th>  
+    <th> Note </th>
+    <th> Profit Per Iteration</th>
+    <th> Date </th>
+  </tr>
+  <tr *ngFor="let li of list | async">
+    <td>{{li.action}}</td>
+    <td>{{li.sName}}</td>
+    <td>{{li.totalBuyPrice}}</td>
+    <td>{{li.quantity}}</td>
+    <td>{{li.log}}</td>
+    <td>{{li.ppi}}</td>
+    <td> {{li.date | date:'dd.MM.yy HH:mm:ss'}}</td>
+  </tr> 
+</table>
+

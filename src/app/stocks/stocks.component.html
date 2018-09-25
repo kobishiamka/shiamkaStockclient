@@ -1,0 +1,22 @@
+<!-- <div style="width:100%;height:100;padding-bottom:2%;position:relative;"><iframe src="https://giphy.com/embed/4ESQotlMwNuCs" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe> -->
+<!-- </div><p><a href="https://giphy.com/gifs/scandal-4ESQotlMwNuCs"></a></p> -->
+<marquee class='runner'><p *ngIf='text'> {{text}}</p></marquee>
+<p></p>
+<table border='2' class='table'>
+  <tr>
+    <th> Stock name</th>
+    <th> Open Price</th>
+    <th> Current Price</th>
+    <th> Change Percent</th>  
+    <th> Direction </th>
+    <th> Action </th>
+  </tr>
+  <tr *ngFor="let li of list | async">
+    <td>{{li.sName}}</td>
+    <td>{{li.openPrice | currency}}</td>
+    <td [ngClass]="li.currentPrice>=li.openPrice?'green':'red'">{{li.currentPrice | currency}}</td>
+    <td [ngClass]="li.currentPrice>=li.openPrice?'green':'red'">{{li.changePercent | percent:'1.2-2'}}</td>
+    <td [ngClass]="li.currentPrice>=li.openPrice?'up':'down'"></td>
+    <td><button class="myButton" (click)="butStock(li)" type="submit" >BUY</button></td>
+  </tr> 
+</table>

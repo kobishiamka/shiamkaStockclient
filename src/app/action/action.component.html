@@ -1,0 +1,18 @@
+
+<form class="form-style-9" [formGroup]="form" (ngSubmit)="doAction()">
+    <ul>
+    <li>
+        <input type="text" name="sName" class="field-style field-split align-left" placeholder="Stock name" formControlName="sName" />    
+    </li>
+    <li>
+        <input type="number" name="Ammount" class="field-style field-split align-left" placeholder="quantity" formControlName="quantity" min="1"/>
+        <input type="number" name="currentPrice" class="field-style field-split align-right" placeholder="Price" formControlName="currentPrice"/>
+    </li>
+    <li>
+       <input> <textarea name="log" class="field-style" placeholder="Add note for your stock exchange journal" formControlName="log"></textarea>
+    </li>
+    <li>
+    <input type="submit" value="Apply" />
+    </li>
+    </ul>
+    </form>
