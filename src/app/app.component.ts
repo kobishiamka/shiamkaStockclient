@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterConfigLoader } from '../../node_modules/@angular/router/src/router_config_loader';
 import { Router } from '../../node_modules/@angular/router';
 import { StocksService } from './service.service';
 import { Socket } from 'ngx-socket-io';
@@ -18,7 +17,7 @@ export class AppComponent {
     {value: '7000', viewValue: 'PERIOD_S7'},
     {value: '10000', viewValue: 'PERIOD_S10'}
   ];
-  
+
   constructor( private router: Router ,private stockDataService: StocksService ,private socket:Socket){
 
   }

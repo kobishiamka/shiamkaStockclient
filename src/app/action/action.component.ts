@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { StocksService } from '../service.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute } from '../../../node_modules/@angular/router';
+import { ServiceActionService } from '../service-action.service';
 
 
 @Component({
@@ -19,13 +19,13 @@ export class ActionComponent implements OnInit {
   }
   doAction(){
       if (this.formTransactionType){
-      this.StocksService.buyStockViaServer(this.form.value.sName,this.form.value.quantity,this.form.value.currentPrice,this.form.value.log);
+      this.actionService.buyStockViaServer(this.form.value.sName,this.form.value.quantity,this.form.value.currentPrice,this.form.value.log);
       }
       else{
-      this.StocksService.sellStockViaServer(this.form.value.sName,this.form.value.quantity,this.form.value.currentPrice,this.form.value.log);
+      this.actionService.sellStockViaServer(this.form.value.sName,this.form.value.quantity,this.form.value.currentPrice,this.form.value.log);
       }
   }
-  constructor(private StocksService: StocksService , private fb: FormBuilder ,private activeRoute: ActivatedRoute) {
+  constructor(private actionService: ServiceActionService , private fb: FormBuilder ,private activeRoute: ActivatedRoute) {
     activeRoute.params.subscribe(params => {
       this.form = this.fb.group({
       sName: [params['sName']],
